@@ -16,7 +16,7 @@ module.exports = {
             const academy = await Academy.create({
                 name,
                 img_academy_url,
-                user_list: "0",
+                user_list: [],
                 location
             })
         }
