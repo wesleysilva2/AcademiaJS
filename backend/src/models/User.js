@@ -6,6 +6,7 @@ const UserSchema = new mongoose.Schema({
     email: String,
     dataNascimento: String,
     matriculaVencida: Boolean,
+    funcionario: Boolean,
     avatar_url: String,
 });
 

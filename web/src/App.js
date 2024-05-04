@@ -26,6 +26,10 @@ function App() {
           <label htmlFor="avatarUsuario">Avatar URL</label>
           <input name="avatarUsuario" id="avatarUsuario" required/>
         </div>
+        <div class="input-block">
+          <label for="funcionario">É Funcionário?</label>
+          <input type="checkbox" name="funcionario" id="funcionario" />
+        </div>
         <button type="submit">Salvar</button>
       </form>
     </aside>
