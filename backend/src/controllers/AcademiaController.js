@@ -3,7 +3,7 @@ const parseStringAsArray = require('../utils/parseStringAsArray');
 
 module.exports = {
     async store(request, response) {
-        const { name, img_academy_url, latitude, longitude } = request.body;
+        const { name, img_academy_url, endereco, cidade, latitude, longitude } = request.body;
 
         let academy = await Academy.findOne({ name });
 
@@ -13,9 +13,11 @@ module.exports = {
         }
 
         if (!academy) {
-            const academy = await Academy.create({
+            academy = await Academy.create({
                 name,
                 img_academy_url,
+                endereco,
+                cidade,
                 user_list: [],
                 location
             })

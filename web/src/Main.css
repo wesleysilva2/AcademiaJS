@@ -1,0 +1,58 @@
+main{
+    flex: 1; /**Faz o main usar todo o espaço **/ 
+}
+
+main ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /**Duas colunas ocupando 50 a 50 % pra 2 elementos **/ 
+    gap:20px;
+    list-style: none;
+}
+
+li.academy-item {
+    background: #fff;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+    border-radius: 2px;
+    padding:20px;
+}
+
+li.academy-item header{
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+}
+
+li.academy-item header img{
+    width: 350px;
+    height: 300px;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 8px; /* Adicione um pouco de arredondamento às bordas */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+    border: 1px solid #ccc; /* Adiciona uma borda para separar visualmente as imagens */
+}
+
+li.academy-item header .academy-info{
+    margin-left: 10px;
+}
+
+.academy-info strong{
+    display: block;
+    font-size: 16px;
+    color: #333;
+}
+
+li.academy-item p{
+    color: #333;
+    font-size: 14px;
+    line-height: 20px;
+    margin:10px 0;
+    text-align: center;
+}
+
+/**Se o layout for menor que 650 ai ele bota 1 coluna linha do grid, tudo pra manter a responsividade **/ 
+@media (max-width: 650px) {
+    main ul {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-    name: String,
+    nomeUsuario: String,
     matricula: String,
-    email: String,
+    emailUsuario: String,
     dataNascimento: String,
     matriculaVencida: Boolean,
-    funcionario: Boolean,
+    funcionario: String,
     avatar_url: String,
 });
 

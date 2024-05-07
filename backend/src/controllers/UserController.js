@@ -10,9 +10,9 @@ module.exports = {
     },
 
     async store(request, response) { // Cadastrar Usuario 
-        const {name,email,dataNascimento, funcionario,avatar_url} = request.body;
+        const { nomeUsuario ,emailUsuario ,dataNascimento, funcionario, avatar_url } = request.body;
 
-        let user = await User.findOne({ email }); // Declarar variavel com Let permite que ela seja sobreposta
+        let user = await User.findOne({ emailUsuario }); // Declarar variavel com Let permite que ela seja sobreposta
         
         const matriculaGerada = geraMatricula(999999, 100000);
 
@@ -25,13 +25,13 @@ module.exports = {
             }
         }
 
-        if (!user) { // Se esse email existir no banco não recadastrar
-            const user = await User.create({
-                name,
+        if (!user) { // Se esse emailUsuario existir no banco não recadastrar
+            user = await User.create({
+                nomeUsuario,
                 matricula: matriculaGerada,
-                email,
+                emailUsuario,
                 dataNascimento,
-                matriculaVencida: 'false',
+                matriculaVencida: false,
                 funcionario,
                 avatar_url,
             })
