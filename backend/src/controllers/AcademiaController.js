@@ -2,6 +2,13 @@ const Academy = require('../models/Academia');
 const parseStringAsArray = require('../utils/parseStringAsArray');
 
 module.exports = {
+
+    async index (request, response) { // Listar Academias 
+        const academias = await Academy.find();
+
+        return response.json(academias);
+    },
+
     async store(request, response) {
         const { name, img_academy_url, endereco, cidade, latitude, longitude } = request.body;
 

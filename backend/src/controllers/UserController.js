@@ -10,7 +10,7 @@ module.exports = {
     },
 
     async store(request, response) { // Cadastrar Usuario 
-        const { nomeUsuario ,emailUsuario ,dataNascimento, funcionario, avatar_url } = request.body;
+        const { nomeUsuario ,emailUsuario ,dataNascimento, funcionario, avatarUsuario } = request.body;
 
         let user = await User.findOne({ emailUsuario }); // Declarar variavel com Let permite que ela seja sobreposta
         
@@ -33,7 +33,7 @@ module.exports = {
                 dataNascimento,
                 matriculaVencida: false,
                 funcionario,
-                avatar_url,
+                avatarUsuario,
             })
         }
         

@@ -9,6 +9,7 @@ const routes = Router();
 routes.get('/users', UserController.index);
 routes.post('/users', UserController.store);
 
+routes.get('/academias', academiaController.index);
 routes.post('/academias', academiaController.store);
 
 routes.get('/search', searchController.index);
